@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded',()=>{
                 && board[winningCombinations[i][1]] === board[winningCombinations[i][2]]
                 && (board[winningCombinations[i][0]] === 'X' || board[winningCombinations[i][0]] === '0')
             ){
-                console.count('winner!');
+                alert(board[winningCombinations[i][1]] + ' wins');
+                resetBoard();
             }
         }
     }
@@ -54,7 +55,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 
             square.textContent = currentPlayer;
             currentPlayer = currentPlayer === 'X' ? '0' : 'X';
-            checkWinState();
+            setTimeout(() => {
+                checkWinState();
+            }, 10);
         
         })
 
